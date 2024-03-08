@@ -66,6 +66,7 @@ public class VideoElement extends ElementiMultimediali implements Player, Lightn
         }
     }
 
+
     @Override
     public void setLuminosità(int luminostà) {
         if (luminostà >= 0 && luminostà <= 100) {

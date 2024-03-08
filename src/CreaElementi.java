@@ -3,6 +3,9 @@ import entities.ElementiMultimediali;
 import entities.ImageElement;
 import entities.VideoElement;
 import java.util.Scanner;
+import interfaces.Player;
+import interfaces.Lightness;
+
 
 
 public class CreaElementi extends ElementiMultimediali {
@@ -29,10 +32,55 @@ public class CreaElementi extends ElementiMultimediali {
         }
 
         System.out.println("ELEMENTI INSERITI:");
-        for (ElementiMultimediali elemento : elementi) {
-            if (elemento != null) {
-                System.out.println(elemento.getTitolo());
+        for (int i = 0; i < 5; i++) {
+            if (elementi[i] != null) {
+                System.out.println((i + 1) + ". " + elementi[i].getTitolo());
             }
+        }
+        System.out.println("SELEZIONA UN ELEMENTO DA ESEGUIRE (1-5):");
+        int selezione = sc.nextInt();
+        sc.nextLine();
+
+        if (selezione < 1 || selezione > 5 || elementi[selezione - 1] == null) {
+            System.out.println("SELEZIONE NON VALIDA. RIPROVA ");
+            selezione = sc.nextInt(); // Richiede un nuovo input dall'utente
+            sc.nextLine();
+        }
+
+        ElementiMultimediali selezionato = elementi[selezione - 1];
+        eseguiMetodo(selezionato, sc);
+
+    }
+
+    private static void eseguiMetodo(ElementiMultimediali selezionato, Scanner sc) {
+        if (selezionato instanceof Lightness) {
+            System.out.println("INSERISCI LA LUMINOSITà (da 0 a 100):");
+            int luminosita = sc.nextInt();
+            ((Lightness) selezionato).setLuminosità(luminosita);
+        }
+
+        if (selezionato instanceof Player) {
+            Player player = (Player) selezionato;
+            System.out.println("INSERISCI IL VOLUME :");
+            int volume = sc.nextInt();
+            player.setMoreVolume(volume);
+
+            if (player instanceof AudioElement) {
+                System.out.println("INSERISCI LA DURATA (in minuti):");
+            } else if (player instanceof VideoElement) {
+                System.out.println("INSERISCI LA DURATA (in minuti):");
+            }
+            int durata = sc.nextInt();
+            player.setDurata(durata);
+
+            player.play();
+        } else if (selezionato instanceof ImageElement) {
+            ImageElement imageElement = (ImageElement) selezionato;
+            System.out.println("INSERISCI LA LUMINOSITà (da 0 a 100):");
+            int luminosita = sc.nextInt();
+            imageElement.setLuminosità(luminosita);
+
+            imageElement.show();
         }
     }
 
