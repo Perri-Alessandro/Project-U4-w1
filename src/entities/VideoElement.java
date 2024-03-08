@@ -5,8 +5,8 @@ import interfaces.Player;
 
 public class VideoElement extends ElementiMultimediali implements Player, Lightness {
 
-    public int durata = 0;
-    public int volume = 0;
+    private int durata = 0;
+    private int volume = 0;
     private int luminosità;
 
     public VideoElement(String titolo) {
@@ -21,13 +21,12 @@ public class VideoElement extends ElementiMultimediali implements Player, Lightn
 
     @Override
     public void setMoreVolume(int set) {
-        volume = 0;
         System.out.println("VOLUME SETTATO " + (this.volume += set));
     }
 
     @Override
     public void setLessVolume(int setLess) {
-        System.out.println("VOLUME DIMINUITO " + (this.volume - setLess ));
+        System.out.println("VOLUME DIMINUITO " + (this.volume - setLess));
     }
 
     @Override
@@ -37,7 +36,12 @@ public class VideoElement extends ElementiMultimediali implements Player, Lightn
 
     @Override
     public void setDurata(int tempo) {
-        System.out.println("DURATA SETTATA " + (this.durata = tempo));
+        if (tempo > 0) {
+            this.durata = tempo;
+            System.out.println("DURATA SETTATA " + durata);
+        } else {
+            System.out.println("ERRORE: La durata deve essere un numero positivo.");
+        }
     }
 
     @Override
@@ -63,10 +67,10 @@ public class VideoElement extends ElementiMultimediali implements Player, Lightn
     }
 
     @Override
-    public void setLuminostà(int luminostà) {
-        if (luminosità >= 0 && luminosità <= 100) {
-            this.luminosità = luminosità;
-            System.out.println("LUMINOSITà IMPOSTATA SU: " + luminosità);
+    public void setLuminosità(int luminostà) {
+        if (luminostà >= 0 && luminostà <= 100) {
+            this.luminosità = luminostà;
+            System.out.println("LUMINOSITà IMPOSTATA SU: " + luminostà);
         } else {
             System.out.println("VALORE LUMINOSTà NON VALIDO. VALORE DEV'ESSERE COMPRESO TRA 0 e 100.");
         }

@@ -15,7 +15,7 @@ public class ImageElement extends ElementiMultimediali implements Lightness {
     }
 
     @Override
-    public void setLuminostà(int luminosità) {
+    public void setLuminosità(int luminosità) {
         if (luminosità >= 0 && luminosità <= 100) {
             this.luminosità = luminosità;
             System.out.println("LUMINOSITà IMPOSTATA SU: " + luminosità);

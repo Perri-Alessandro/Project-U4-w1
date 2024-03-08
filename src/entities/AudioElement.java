@@ -33,7 +33,6 @@ public class AudioElement extends ElementiMultimediali implements Player {
 
     @Override
     public void setMoreVolume(int set) {
-        volume = 0;
         System.out.println("VOLUME SETTATO " + (this.volume += set));
     }
 
@@ -49,7 +48,12 @@ public class AudioElement extends ElementiMultimediali implements Player {
 
     @Override
     public void setDurata(int tempo) {
-        System.out.println("DURATA SETTATA " + (this.durata = tempo));
+        if (tempo > 0) {
+            this.durata = tempo;
+            System.out.println("DURATA SETTATA " + durata);
+        } else {
+            System.out.println("ERRORE: La durata deve essere un numero positivo.");
+        }
     }
 
 }
