@@ -16,6 +16,26 @@ public class CreaElementi extends ElementiMultimediali {
         System.out.println("TITOLO INSERITO: " + titolo);
     }
 
+    public static void creaElementi(Scanner sc) {
+        ElementiMultimediali[] elementi = new ElementiMultimediali[5];
+        int numeroElementi = 0;
+
+        while (numeroElementi < 5) {
+            ElementiMultimediali media = creaMedia(sc);
+            if (media == null) {
+                break;
+            }
+            elementi[numeroElementi++] = media;
+        }
+
+        System.out.println("ELEMENTI INSERITI:");
+        for (ElementiMultimediali elemento : elementi) {
+            if (elemento != null) {
+                System.out.println(elemento.getTitolo());
+            }
+        }
+    }
+
     public static ElementiMultimediali creaMedia(Scanner sc) {
         ElementiMultimediali media = null;
 
@@ -39,7 +59,7 @@ public class CreaElementi extends ElementiMultimediali {
                     break;
                 default:
                     System.out.println("SCELTA NON VALIDA, NON COMPRESA TRA 1 E 3.");
-                    break;
+                    return creaMedia(sc);
             }
             return media;
         }

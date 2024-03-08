@@ -29,22 +29,8 @@ public class Main {
 //        test.setLuminosità(9);
 //        test.show();
 
-        ElementiMultimediali[] elementi = new ElementiMultimediali[5];
+        CreaElementi.creaElementi(sc);
 
-        for(int i = 0; i < 5; i++) {
-            ElementiMultimediali media = CreaElementi.creaMedia(sc);
-            if (media == null) {
-                break;
-            }
-            elementi[i] = media;
-        }
-
-        System.out.println("ELEMENTI INSERITI:");
-        for (ElementiMultimediali elemento : elementi) {
-            if (elemento != null) {
-                System.out.println(elemento.getTitolo());
-            }
-        }
         sc.close();
 
     }
