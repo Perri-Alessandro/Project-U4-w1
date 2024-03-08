@@ -9,5 +9,7 @@ public interface Player {
     public int getVolume();
 
     public void setDurata(int tempo);
+
+    public void play();
 }
 

@@ -12,9 +12,11 @@ public class AudioElement extends ElementiMultimediali implements Player {
     }
     @Override
     public void setTitolo(String titolo) {
-
+      String testo = null;
+      System.out.println("TITOLO INSERITO " + (titolo = testo));
     }
 
+    @Override
     public void play() {
         if (durata <= 0) {
             System.out.println("QUESTO ELEMENTO NON HA DURATA");
@@ -32,7 +34,7 @@ public class AudioElement extends ElementiMultimediali implements Player {
     @Override
     public void setMoreVolume(int set) {
         volume = 0;
-//        System.out.println("VOLUME SETTATO " + (this.volume += set));
+        System.out.println("VOLUME SETTATO " + (this.volume += set));
     }
 
     @Override
