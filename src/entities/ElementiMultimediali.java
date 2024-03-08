@@ -1,20 +1,17 @@
 package entities;
 
 public abstract class ElementiMultimediali {
-    private String titolo;
+    protected String titolo;
 
     public ElementiMultimediali(String titolo) {
         this.titolo = titolo;
     }
 
-    public abstract void getTitolo();
-
-    public abstract void setTitolo();
-
-    public void play() {
-        int durata = 0;
-       System.out.println( durata == 0 ? "QUESO ELEMENTO NON HA UNA DURATA" : "ELEMENTO IN RIPRODUZIONE ");
+    public String getTitolo() {
+        return titolo;
     }
+
+    public abstract void setTitolo(String titolo);
 
     @Override
     public String toString() {
