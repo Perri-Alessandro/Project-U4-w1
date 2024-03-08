@@ -13,10 +13,11 @@ public abstract class ElementiMultimediali {
 
     public abstract void setTitolo(String titolo);
 
-    @Override
-    public String toString() {
-        return "ElementiMultimediali{" +
-                "titolo='" + titolo + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "ElementiMultimediali{" +
+//                "titolo='" + titolo + '\'' +
+//                '}';
+//    }
+
 }
