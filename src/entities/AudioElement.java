@@ -12,8 +12,8 @@ public class AudioElement extends ElementiMultimediali implements Player {
     }
     @Override
     public void setTitolo(String titolo) {
-      String testo = null;
-      System.out.println("TITOLO INSERITO " + (titolo = testo));
+        this.titolo = titolo;
+        System.out.println("TITOLO INSERITO: " + titolo);
     }
 
     @Override
