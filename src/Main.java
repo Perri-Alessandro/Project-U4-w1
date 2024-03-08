@@ -1,7 +1,4 @@
-import entities.AudioElement;
-import entities.ElementiMultimediali;
-import entities.ImageElement;
-import entities.VideoElement;
+import entities.*;
 
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package entities;
+
 import entities.AudioElement;
 import entities.ElementiMultimediali;
 import entities.ImageElement;
@@ -19,7 +21,7 @@ public class CreaElementi extends ElementiMultimediali {
         System.out.println("TITOLO INSERITO: " + titolo);
     }
 
-    public static void creaElementi(Scanner sc) {
+        public static void creaElementi (Scanner sc){
         ElementiMultimediali[] elementi = new ElementiMultimediali[5];
         int numeroElementi = 0;
 
@@ -43,7 +45,7 @@ public class CreaElementi extends ElementiMultimediali {
 
         if (selezione < 1 || selezione > 5 || elementi[selezione - 1] == null) {
             System.out.println("SELEZIONE NON VALIDA. RIPROVA ");
-            selezione = sc.nextInt(); // Richiede un nuovo input dall'utente
+            selezione = sc.nextInt();
             sc.nextLine();
         }
 
@@ -52,7 +54,7 @@ public class CreaElementi extends ElementiMultimediali {
 
     }
 
-    private static void eseguiMetodo(ElementiMultimediali selezionato, Scanner sc) {
+        private static void eseguiMetodo (ElementiMultimediali selezionato, Scanner sc){
         if (selezionato instanceof Lightness) {
             System.out.println("INSERISCI LA LUMINOSITà (da 0 a 100):");
             int luminosita = sc.nextInt();
@@ -83,6 +85,7 @@ public class CreaElementi extends ElementiMultimediali {
             imageElement.show();
         }
     }
+
 
     public static ElementiMultimediali creaMedia(Scanner sc) {
         ElementiMultimediali media = null;
